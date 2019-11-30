@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:keepScreenOn="true"
+        android:background="@android:color/transparent">
+
+    <View android:layout_width="0dp"
+             android:layout_height="0dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             android:id="@+id/webTop"
+             app:layout_constraintTop_toTopOf="parent"/>
+    <com.google.android.exoplayer2.ui.VideoPlayerView
+            android:layout_width="match_parent"
+            app:layout_constraintDimensionRatio="H,16:9"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/videoPlayerTH"
+            app:layout_constraintTop_toBottomOf="@+id/webTop">
+
+    </com.google.android.exoplayer2.ui.VideoPlayerView>
+
+    <include
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            layout="@layout/layout_media_controller"
+            android:id="@+id/include"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/videoPlayerTH"
+            app:layout_constraintStart_toStartOf="@+id/videoPlayerTH"
+            app:layout_constraintBottom_toTopOf="@+id/webDetail"
+            app:layout_constraintTop_toBottomOf="@+id/webTop"/>
+
+    <com.comix.overwatch.HiveProgressView
+            android:id="@+id/loadingView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:hive_animDuration="5000"
+            app:hive_color="@color/colorRed"
+            app:hive_maxAlpha="255"
+            app:hive_cornerRadius="2"
+            app:hive_shrink="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/videoPlayerTH"
+            app:layout_constraintStart_toStartOf="@+id/videoPlayerTH"
+            app:layout_constraintBottom_toBottomOf="@+id/videoPlayerTH"
+            app:layout_constraintTop_toTopOf="@id/webTop"/>
+    <WebView
+            android:id="@+id/webDetail"
+            android:background="@color/colorWhite"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videoPlayerTH"/>
+
+    <FrameLayout
+            android:id="@+id/flShimmer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@+id/webTop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:orientation="vertical"
+                          android:background="@color/colorWhite">
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_margin="16dp"
+                          android:layout_height="120dp"
+                          android:background="@drawable/shape_shimmer"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_margin="16dp"
+                          android:layout_height="120dp"
+                          android:background="@drawable/shape_shimmer"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_margin="16dp"
+                          android:layout_height="120dp"
+                          android:background="@drawable/shape_shimmer"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </FrameLayout>
+
+    <include android:id="@+id/failedView"
+             layout="@layout/layout_failed"
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:visibility="gone"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"/>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/homeContainerTH">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

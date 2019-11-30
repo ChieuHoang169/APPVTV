@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_kho_video"
+            android:icon="@drawable/khovideo"
+            android:title="@string/title_kho_video"/>
+
+    <item
+            android:id="@+id/navigation_truyen_hinh"
+            android:icon="@drawable/truyenhinh"
+            android:title="@string/title_truyen_hinh"/>
+
+    <item
+            android:id="@+id/navigation_don_xem"
+            android:icon="@drawable/donxem"
+            android:title="@string/title_don_xem"/>
+
+    <item
+            android:id="@+id/navigation_kham_pha"
+            android:icon="@drawable/khampha"
+            android:title="@string/title_kham_pha"/>
+
+    <item
+            android:id="@+id/navigation_ca_nhan"
+            android:icon="@drawable/canhan"
+            android:title="@string/title_ca_nhan"/>
+
+</menu>

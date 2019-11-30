@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.vtvcab.on.aosnews.MainActivity"
+        android:clipToPadding="false">
+
+    <!--<include-->
+            <!--android:id="@+id/toolbar"-->
+            <!--layout="@layout/layout_toolbar"/>-->
+
+    <com.vtvcab.on.aosnews.view.NoneSwipePager
+            android:id="@+id/vpMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/navigation"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:labelVisibilityMode="labeled"
+            app:itemBackground="@color/colorBackButton"
+            app:itemIconTint="@color/text_bottom_navigation"
+            app:itemTextColor="@color/text_bottom_navigation"
+            app:menu="@menu/navigation"/>
+
+</RelativeLayout>

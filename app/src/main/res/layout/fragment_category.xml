@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/drawable_webview_progress"
+                    android:max="100"
+                    android:progress="20"
+                    android:visibility="visible"/>
+
+            <WebView
+                    android:id="@+id/webHome"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <include android:id="@+id/failedView"
+                     android:layout_centerInParent="true"
+                     layout="@layout/layout_failed"
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:visibility="gone"/>
+
+            <com.comix.overwatch.HiveProgressView
+                    android:id="@+id/loadingView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    app:hive_animDuration="5000"
+                    app:hive_color="@color/colorRed"
+                    app:hive_maxAlpha="200"
+                    app:hive_cornerRadius="2"
+                    app:hive_shrink="true"
+                    android:visibility="gone"/>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_view_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:orientation="vertical">
+
+                    <TextView android:layout_width="match_parent"
+                              android:layout_margin="16dp"
+                              android:layout_height="280dp"
+                              android:background="@drawable/shape_shimmer"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:layout_margin="16dp"
+                              android:layout_height="120dp"
+                              android:background="@drawable/shape_shimmer"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:layout_margin="16dp"
+                              android:layout_height="120dp"
+                              android:background="@drawable/shape_shimmer"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:layout_margin="16dp"
+                              android:layout_height="120dp"
+                              android:background="@drawable/shape_shimmer"/>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <FrameLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="match_parent"
+                 android:layout_height="match_parent"/>
+</RelativeLayout>

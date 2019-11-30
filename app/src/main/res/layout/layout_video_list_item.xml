@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:id="@+id/parent"
+    android:background="@color/colorBackButton">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/media_container"
+        android:text="This is the title"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:background="#000"
+        android:scaleType="center"
+        android:id="@+id/media_container">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:scaleType="centerInside"/>
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_volume_up_grey_24dp"
+            android:layout_gravity="end|bottom"
+            android:id="@+id/volume_control"
+            android:alpha="0"
+            android:animateLayoutChanges="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:indeterminateTint="@color/colorRed"
+            android:layout_gravity="center" />
+
+
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/tvTimeDate"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="13dp"
+            android:visibility="visible"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@+id/media_container"
+            app:layout_constraintEnd_toStartOf="@+id/btnRemind"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/btnRemind"
+            android:layout_marginStart="16dp"/>
+    <Button
+            android:id="@+id/btnRemind"
+            android:text="Nhắc tôi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            android:drawableLeft="@drawable/ic_notifications_white_24dp"
+            android:background="@color/colorBackGray"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@+id/media_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"/>
+    <TextView
+            android:id="@+id/tvTitle"
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnRemind"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/tvTimeDate"
+            />
+    <TextView
+            android:id="@+id/tvContent"
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            android:layout_marginTop="8dp"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="@+id/btnRemind" android:layout_marginEnd="16dp"/>
+    <TextView
+            android:id="@+id/tvAction"
+            android:text="Hành động"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="8dp"
+            android:textSize="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent"
+            app:layout_constraintStart_toStartOf="@+id/tvContent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"/>
+    <TextView
+            android:id="@+id/tvAdventure"
+            android:text="Phiêu lưu"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toEndOf="@+id/tvAction"
+            app:layout_constraintTop_toTopOf="@+id/tvAction"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAction"/>
+    <TextView
+            android:id="@+id/tvDrama"
+            android:text="Chính kịch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toEndOf="@+id/tvAdventure"
+            app:layout_constraintTop_toTopOf="@+id/tvAdventure"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAdventure"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+

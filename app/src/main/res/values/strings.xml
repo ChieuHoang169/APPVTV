@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">vtvcab-on-app-aos</string>
+    <string name="title_kho_video">Kho video</string>
+    <string name="title_truyen_hinh">Truyền hình</string>
+    <string name="title_don_xem">Đón xem</string>
+    <string name="title_kham_pha">Khám phá</string>
+    <string name="title_ca_nhan">Cá nhân</string>
+    <string name="load_failed">Tải thông tin thất bại, nhấn vào đây để thử lại </string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+</resources>

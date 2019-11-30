@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+            android:background="@color/colorBackButton"
+            app:tabIndicatorColor="@color/colorRed"
+            app:tabSelectedTextColor="@color/colorRed"
+            app:tabTextColor="@color/colorWhite">
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tất cả"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabVTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VTV"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabVTVCab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VTVCab"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabForeign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nước ngoài"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabFeatured"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đặc sắc"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+</LinearLayout>
